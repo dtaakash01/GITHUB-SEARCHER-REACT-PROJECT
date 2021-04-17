@@ -7,12 +7,21 @@ export class Seaarch extends Component {
     state={
         text:''
     }
+    static propTypes = {
+        searchUsers: PropTypes.func.isRequired,
+        clearUsers: PropTypes.func.isRequired,
+        showClear: PropTypes.bool.isRequired,
+      }
 
     onSubmit = e => {
-    e.preventDefault();
+    e.preventDefault();   
+     if(this.state.text === ''){
+        this.props.setAlert("Please Enter Something", "light");
+    }
+    else {
     this.props.searchUsers(this.state.text);
     this.setState({text :''});
-    }
+    }}
 
      onChange = e => {
         this.setState(
@@ -21,11 +30,7 @@ export class Seaarch extends Component {
     }
 
 
-  static propTypes = {
-    searchUsers: PropTypes.func.isRequired,
-    clearUsers: PropTypes.func.isRequired,
-    showClear: PropTypes.bool.isRequired,
-  }
+
 
 
     render() {
