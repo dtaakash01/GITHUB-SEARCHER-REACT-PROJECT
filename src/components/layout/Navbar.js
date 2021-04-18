@@ -5,7 +5,7 @@ class Navbar extends Component {
         return (
             <nav className="navbar bg-primary">
                 <i className="fab fa-github"></i>
-                <h1> Navbar </h1>
+                <h1> GITHUB Search </h1>
                 <ul>
                     <li>
                         <Link to='/'>Home</Link>
